@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Checkout() {
   return (
@@ -577,12 +578,13 @@ export default function Checkout() {
                     </div>
 
                     <div class="form-group">
+                      <Link to = "/thankyou" >
                       <button
                         class="btn btn-black btn-lg py-3 btn-block"
-                        onclick="window.location='thankyou.html'"
                       >
                         Place Order
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
