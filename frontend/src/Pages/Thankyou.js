@@ -61,12 +61,12 @@ export default function Thankyou() {
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
                 <a class="nav-link" href="#">
-                  <img src="images/user.svg" />
+                  <img src="assests/images/user.svg" />
                 </a>
               </li>
               <li>
                 <a class="nav-link" href="cart.html">
-                  <img src="images/cart.svg" />
+                  <img src="assests/images/cart.svg" />
                 </a>
               </li>
             </ul>
@@ -78,7 +78,7 @@ export default function Thankyou() {
           <div class="row justify-content-between">
             <div class="col-lg-5">
               <div class="intro-excerpt">
-                <h1>Cart</h1>
+                <h1>Order Confirmed!</h1>
               </div>
             </div>
             <div class="col-lg-7"></div>
@@ -124,7 +124,7 @@ export default function Thankyou() {
       <footer class="footer-section">
         <div class="container relative">
           <div class="sofa-img">
-            <img src="images/sofa.png" alt="Image" class="img-fluid" />
+            <img src="assests/images/sofa.png" alt="Image" class="img-fluid" />
           </div>
 
           <div class="row">
@@ -133,7 +133,7 @@ export default function Thankyou() {
                 <h3 class="d-flex align-items-center">
                   <span class="me-1">
                     <img
-                      src="images/envelope-outline.svg"
+                      src="assests/images/envelope-outline.svg"
                       alt="Image"
                       class="img-fluid"
                     />
@@ -277,8 +277,7 @@ export default function Thankyou() {
                 <p class="mb-2 text-center text-lg-start">
                   Copyright &copy;
                   <script>document.write(new Date().getFullYear());</script>.
-                  All Rights Reserved. &mdash; Designed with love by{" "}
-                  <a href="https://untree.co">Untree.co</a>
+                  All Rights Reserved. &mdash; Designed with love by Amoire.
                 </p>
               </div>
 
