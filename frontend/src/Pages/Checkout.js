@@ -4,6 +4,15 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 
 export default function Checkout() {
+  const [listOfCart, setListOfCart] = useState([])
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getCartItems").then((response ) =>{
+      setListOfCart(response.data)
+    })
+  }, [])
+
+  
+  
   const [country, setCountry] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -14,6 +23,7 @@ export default function Checkout() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [orderNote, setOrderNote] = useState("");
+  
 
   const createBillInfo = () => {
     Axios.post("http://localhost:3001/addBillingInfo", {
@@ -305,7 +315,7 @@ export default function Checkout() {
             <div class="col-md-6">
               <div class="row mb-5">
                 <div class="col-md-12">
-                  <h2 class="h3 mb-3 text-black">Your Order</h2>
+                <h2 class="h3 mb-3 text-black">Your Order</h2>
                   <div class="p-3 p-lg-5 border bg-white">
                     <table class="table site-block-order-table mb-5">
                       <thead>
@@ -313,23 +323,22 @@ export default function Checkout() {
                         <th>Total</th>
                       </thead>
                       <tbody>
+                      {listOfCart.map((cart)=>{
+                    return(
                         <tr>
                           <td>
-                            Top Up T-Shirt <strong class="mx-2">x</strong> 1
+                            {cart.product} <strong class="mx-2">x</strong>  {cart.quantity}
                           </td>
-                          <td>$250.00</td>
+                          <td>${cart.price}</td>
                         </tr>
-                        <tr>
-                          <td>
-                            Polo Shirt <strong class="mx-2">x</strong> 1
-                          </td>
-                          <td>$100.00</td>
-                        </tr>
+                        );
+                      })}
+                     
                         <tr>
                           <td class="text-black font-weight-bold">
                             <strong>Cart Subtotal</strong>
                           </td>
-                          <td class="text-black">$350.00</td>
+                          <td class="text-black"></td>
                         </tr>
                         <tr>
                           <td class="text-black font-weight-bold">
@@ -339,7 +348,7 @@ export default function Checkout() {
                             <strong>$350.00</strong>
                           </td>
                         </tr>
-                      </tbody>
+                      </tbody>    
                     </table>
 
                     <div class="border p-3 mb-3">
@@ -358,9 +367,9 @@ export default function Checkout() {
 
                   <div class="row mb-5">
                     <div class="col-md-12"></div>
-
                     <div class="form-group">
                       <Link to="/thankyou">
+                        <br></br>
                         <button
                           class="btn btn-black btn-lg py-3 btn-block"
                           onClick={createBillInfo}
