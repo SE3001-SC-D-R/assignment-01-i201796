@@ -1,38 +1,33 @@
-/**
- * This is a basic starting point of the assignment
- * Modify the code according to your own needs and requirements
- */
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const CheckoutModel = require('./Models/Checkout')
+mongoose.connect(
+ "mongodb+srv://nolifenoodler:nolife_12345678@checkout.nqorw3h.mongodb.net/Checkout?retryWrites=true&w=majority"
+);
+const port = 3001;
 
-//const express = require('express')
-import express from 'express'; // <-- Module Style import
-import bodyParser from 'body-parser';
+app.use(express.json())
 
-// Importing user route
-import router from './routes/users.js';
-// const router = require('router')
-
-// const bodyParser = require('body-parser')
-
-const app = express()
-const port = 3001
-
-app.use(bodyParser.json())
-// Adding a Router
-app.use('/users', router);
-
-app.get('/', (req, res) => {
-    res.send('Hello Universe!')
+app.get("/getBillingInfo",(req,res) => {
+    CheckoutModel.find({}, (err,result) =>{
+        if (err){
+            res.json(err)
+        }
+        else{
+            res.json(result)
+        }
+    } )
 })
 
-app.get('/todos', (req, res) => {
-    res.send('A list of todo items will be returned')
-})
+app.post("/addBillingInfo", async (req, res) => {
+    const billInfo = req.body
+    const newBill = new CheckoutModel(billInfo)
+    await newBill.save()
 
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.send('Posting a Request')
-})
+    res.json(newBill)
 
+})
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
