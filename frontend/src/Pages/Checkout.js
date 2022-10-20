@@ -1,24 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Axios from "axios"
-
+import Axios from "axios";
 
 export default function Checkout() {
-const [country, setCountry] = useState("")
-const [firstname, setFirstname] = useState("")
-const [lastname, setLastname] = useState("")
-const [companyname, setCompanyname] = useState("")
-const [address, setAddress] = useState("")
-const [state, setState] = useState("")
-const [zip, setZip] = useState("")
-const [email, setEmail] = useState("")
-const [phone, setPhone] = useState("")
-const [orderNote, setOrderNote] = useState("")
-
+  const [country, setCountry] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [companyname, setCompanyname] = useState("");
+  const [address, setAddress] = useState("");
+  const [state, setState] = useState("");
+  const [zip, setZip] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [orderNote, setOrderNote] = useState("");
 
   const createBillInfo = () => {
-    Axios.post("http://localhost:3001/addBillingInfo",{
+    Axios.post("http://localhost:3001/addBillingInfo", {
       country,
       firstname,
       lastname,
@@ -30,9 +28,9 @@ const [orderNote, setOrderNote] = useState("")
       phone,
       orderNote,
     }).then((response) => {
-      alert("Bill Info Added")
-    })
-  }
+      alert("Bill Info Added");
+    });
+  };
   return (
     <React.Fragment>
       <nav
@@ -131,7 +129,13 @@ const [orderNote, setOrderNote] = useState("")
                   <label for="c_country" class="text-black">
                     Country <span class="text-danger">*</span>
                   </label>
-                  <select id="c_country" class="form-control" onChange={(event)=>{setCountry(event.target.value)}}>
+                  <select
+                    id="c_country"
+                    class="form-control"
+                    onChange={(event) => {
+                      setCountry(event.target.value);
+                    }}
+                  >
                     <option value="1">Select a country</option>
                     <option value="2">Pakistan</option>
                     <option value="3">Algeria</option>
@@ -153,7 +157,9 @@ const [orderNote, setOrderNote] = useState("")
                       class="form-control"
                       id="c_fname"
                       name="c_fname"
-                      onChange={(event) =>{setFirstname(event.target.value)}}
+                      onChange={(event) => {
+                        setFirstname(event.target.value);
+                      }}
                     />
                   </div>
                   <div class="col-md-6">
@@ -165,7 +171,9 @@ const [orderNote, setOrderNote] = useState("")
                       class="form-control"
                       id="c_lname"
                       name="c_lname"
-                      onChange={(event) =>{setLastname(event.target.value)}}
+                      onChange={(event) => {
+                        setLastname(event.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -180,7 +188,9 @@ const [orderNote, setOrderNote] = useState("")
                       class="form-control"
                       id="c_companyname"
                       name="c_companyname"
-                      onChange={(event) =>{setCompanyname(event.target.value)}}
+                      onChange={(event) => {
+                        setCompanyname(event.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -196,7 +206,9 @@ const [orderNote, setOrderNote] = useState("")
                       id="c_address"
                       name="c_address"
                       placeholder="Street address"
-                      onChange={(event) =>{setAddress(event.target.value)}}
+                      onChange={(event) => {
+                        setAddress(event.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -219,7 +231,9 @@ const [orderNote, setOrderNote] = useState("")
                       class="form-control"
                       id="c_state_country"
                       name="c_state_country"
-                      onChange={(event) =>{setState(event.target.value)}}
+                      onChange={(event) => {
+                        setState(event.target.value);
+                      }}
                     />
                   </div>
                   <div class="col-md-6">
@@ -231,7 +245,9 @@ const [orderNote, setOrderNote] = useState("")
                       class="form-control"
                       id="c_postal_zip"
                       name="c_postal_zip"
-                      onChange={(event) =>{setZip(event.target.value)}}
+                      onChange={(event) => {
+                        setZip(event.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -246,7 +262,9 @@ const [orderNote, setOrderNote] = useState("")
                       class="form-control"
                       id="c_email_address"
                       name="c_email_address"
-                      onChange={(event) =>{setEmail(event.target.value)}}
+                      onChange={(event) => {
+                        setEmail(event.target.value);
+                      }}
                     />
                   </div>
                   <div class="col-md-6">
@@ -259,7 +277,9 @@ const [orderNote, setOrderNote] = useState("")
                       id="c_phone"
                       name="c_phone"
                       placeholder="Phone Number"
-                      onChange={(event) =>{setPhone(event.target.value)}}
+                      onChange={(event) => {
+                        setPhone(event.target.value);
+                      }}
                     />
                   </div>
                 </div>
@@ -275,7 +295,9 @@ const [orderNote, setOrderNote] = useState("")
                     rows="5"
                     class="form-control"
                     placeholder="Write your notes here..."
-                    onChange={(event) =>{setOrderNote(event.target.value)}}
+                    onChange={(event) => {
+                      setOrderNote(event.target.value);
+                    }}
                   ></textarea>
                 </div>
               </div>
@@ -339,7 +361,10 @@ const [orderNote, setOrderNote] = useState("")
 
                     <div class="form-group">
                       <Link to="/thankyou">
-                        <button class="btn btn-black btn-lg py-3 btn-block" onClick={createBillInfo}>
+                        <button
+                          class="btn btn-black btn-lg py-3 btn-block"
+                          onClick={createBillInfo}
+                        >
                           Place Order
                         </button>
                       </Link>

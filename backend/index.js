@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const CheckoutModel = require("./Models/Checkout");
+const CartModel = require("./Models/Cart")
 const cors = require("cors");
 
 mongoose.connect(
@@ -13,8 +14,8 @@ const port = 3001;
 app.use(express.json());
 app.use(cors());
 
-app.get("/getBillingInfo", (req, res) => {
-  CheckoutModel.find({}, (err, result) => {
+app.get("/getCartItems", (req, res) => {
+  CartModel.find({}, (err, result) => {
     if (err) {
       res.json(err);
     } else {
