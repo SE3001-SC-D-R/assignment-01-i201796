@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 
+
 export default function Checkout() {
   const [listOfCart, setListOfCart] = useState([]);
   let total = 0
@@ -10,6 +11,7 @@ export default function Checkout() {
   useEffect(() => {
     Axios.get("http://localhost:3001/getCartItems").then((response) => {
       setListOfCart(response.data);
+      setOrderProducts(response.data)
     });
   }, []);
 
@@ -23,14 +25,9 @@ export default function Checkout() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [orderNote, setOrderNote] = useState("");
-  const [orderProducts, setOrderProducts ] = useState("")
+  const [orderProducts, setOrderProducts ] = useState([])
   const [payment, setPayment] = useState("")
-  const [totalAmount, setTotalAmount] = useState(0)
-  
-  let cartItems = {
-    items: []
-  }; 
-
+  const [totalAmount, setTotalAmount] = useState("")
 
   const calTotal = () =>{
     let temp =0 
@@ -38,6 +35,7 @@ export default function Checkout() {
       temp += listOfCart[index].price;
     }
     console.log(temp)
+  
     return temp
   }
 
@@ -65,18 +63,6 @@ export default function Checkout() {
     });
   
 };
-
-const mapItems = () => {listOfCart.map(function(item){
-  cartItems.items.push({
-    "product": item.product,
-    "quantity": item.quantity,
-    "price":item.price
-  })
-})
-console.log(cartItems.item)
-setOrderProducts(cartItems)
-}
-
 
   return (
     <React.Fragment>
@@ -410,7 +396,7 @@ setOrderProducts(cartItems)
                         <Link to="/thankyou">
                           <button 
                             class="btn btn-black btn-lg py-3 btn-block"
-                            onClick= { () => {createBillInfo(); mapItems();}}
+                            onClick= { () => {createBillInfo(); }}
                           >
                           Place Order
                           </button>

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+
 const currentDate = () => {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -8,6 +9,22 @@ const currentDate = () => {
     today = mm + '/' + dd + '/' + yyyy;
     return today
 }
+
+
+const CartSchema = new mongoose.Schema({
+    product : {
+        type: String,
+        required: true
+    },
+    quantity : {
+        type: Number,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    }
+});
 
 const cuDate = currentDate()
 
@@ -51,7 +68,7 @@ const CheckoutSchema = new mongoose.Schema({
         type: String,
     },
     orderProducts : {
-        type: Object,
+        type: [CartSchema],
         required : true
     },
     payment: {
