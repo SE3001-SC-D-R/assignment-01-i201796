@@ -15,6 +15,7 @@ export default function Checkout() {
     });
   }, []);
 
+  const [totalAmount, setTotalAmount] = useState("")
   const [country, setCountry] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -27,7 +28,7 @@ export default function Checkout() {
   const [orderNote, setOrderNote] = useState("");
   const [orderProducts, setOrderProducts ] = useState([])
   const [payment, setPayment] = useState("")
-  const [totalAmount, setTotalAmount] = useState(0)
+
   
 
   const calTotal = () =>{
@@ -40,8 +41,8 @@ export default function Checkout() {
   }
 
   total = calTotal()
-
-  
+  const amount = calTotal()
+ // setTotalAmount(amount)
 
   const createBillInfo = () => {
      Axios.post("http://localhost:3001/addBillingInfo", {
@@ -63,13 +64,6 @@ export default function Checkout() {
     });
   
 };
-
-const mapItems = () => {
-//setOrderProducts(listOfCart[0])
-//console.log(listOfCart[0])
-}
-
-
   return (
     <React.Fragment>
       <nav
@@ -275,7 +269,7 @@ const mapItems = () => {
                       />
                     </div>
                     <div class="col-md-6">
-                      <label for="c_postal_zip" class="text-black">
+                      <label  for="c_postal_zip" class="text-black">
                         Posta / Zip <span class="text-danger">*</span>
                       </label>
                       <input
@@ -367,7 +361,7 @@ const mapItems = () => {
                             <td class="text-black font-weight-bold">
                               <strong>Cart Subtotal</strong>
                             </td>
-                            <td class="text-black">${total}</td>
+                            <td onChange={ (event) => {setTotalAmount(event.target.value)}} class="text-black">${total}</td>
                           </tr>
                           <tr>
                             <td class="text-black font-weight-bold">
@@ -399,14 +393,13 @@ const mapItems = () => {
                       <div class="col-md-12"></div>
                       <div class="form-group">
                       <br></br>
-                        <Link to="/thankyou">
+                      
                           <button 
                             class="btn btn-black btn-lg py-3 btn-block"
-                            onClick= { () => {createBillInfo(); mapItems();}}
+                            onClick= { () => {createBillInfo(); setTotalAmount(amount)}}
                           >
                           Place Order
                           </button>
-                        </Link>
                       </div>
                     </div>
                   </div>
