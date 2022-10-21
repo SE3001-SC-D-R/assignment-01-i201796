@@ -27,7 +27,8 @@ export default function Checkout() {
   const [orderNote, setOrderNote] = useState("");
   const [orderProducts, setOrderProducts ] = useState([])
   const [payment, setPayment] = useState("")
-  const [totalAmount, setTotalAmount] = useState("")
+  const [totalAmount, setTotalAmount] = useState(0)
+  
 
   const calTotal = () =>{
     let temp =0 
@@ -35,7 +36,6 @@ export default function Checkout() {
       temp += listOfCart[index].price;
     }
     console.log(temp)
-  
     return temp
   }
 
@@ -63,6 +63,12 @@ export default function Checkout() {
     });
   
 };
+
+const mapItems = () => {
+//setOrderProducts(listOfCart[0])
+//console.log(listOfCart[0])
+}
+
 
   return (
     <React.Fragment>
@@ -396,7 +402,7 @@ export default function Checkout() {
                         <Link to="/thankyou">
                           <button 
                             class="btn btn-black btn-lg py-3 btn-block"
-                            onClick= { () => {createBillInfo(); }}
+                            onClick= { () => {createBillInfo(); mapItems();}}
                           >
                           Place Order
                           </button>
