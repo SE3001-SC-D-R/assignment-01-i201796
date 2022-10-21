@@ -6,7 +6,7 @@ const CartModel = require("./Models/Cart")
 const cors = require("cors");
 
 mongoose.connect(
-  "mongodb+srv://nolifenoodler:nolife_12345678@checkout.nqorw3h.mongodb.net/Checkout?retryWrites=true&w=majority"
+  "mongodb+srv://saraq268:4n4XSMe1IE8vukPN@cluster0.l2i8oag.mongodb.net/armoire?retryWrites=true&w=majority"
 );
 
 const port = 3001;
