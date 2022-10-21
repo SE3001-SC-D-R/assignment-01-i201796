@@ -23,7 +23,14 @@ export default function Checkout() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [orderNote, setOrderNote] = useState("");
+  const [orderProducts, setOrderProducts ] = useState("")
+  const [payment, setPayment] = useState("")
+  const [totalAmount, setTotalAmount] = useState(0)
   
+  let cartItems = {
+    items: []
+  }; 
+
 
   const calTotal = () =>{
     let temp =0 
@@ -50,11 +57,26 @@ export default function Checkout() {
       email,
       phone,
       orderNote,
+      orderProducts,
+      payment,
+      totalAmount,
     }).then((response) => {
       alert("Bill Info Added");
     });
   
 };
+
+const mapItems = () => {listOfCart.map(function(item){
+  cartItems.items.push({
+    "product": item.product,
+    "quantity": item.quantity,
+    "price":item.price
+  })
+})
+console.log(cartItems.item)
+setOrderProducts(cartItems)
+}
+
 
   return (
     <React.Fragment>
@@ -373,6 +395,7 @@ export default function Checkout() {
                     <select 
                       id="Payment"
                       class="form-control"
+                      onChange={(event) => setPayment(event.target.value)}
                     >
                       <option value="1">Select a Payment Option</option>
                       <option value="Cash On Delivery">Cash On Delivery</option>
@@ -387,7 +410,7 @@ export default function Checkout() {
                         <Link to="/thankyou">
                           <button 
                             class="btn btn-black btn-lg py-3 btn-block"
-                            onClick={createBillInfo}
+                            onClick= { () => {createBillInfo(); mapItems();}}
                           >
                           Place Order
                           </button>

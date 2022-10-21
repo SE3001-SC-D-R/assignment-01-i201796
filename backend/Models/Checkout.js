@@ -1,5 +1,16 @@
 const mongoose = require("mongoose")
 
+const currentDate = () => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    return today
+}
+
+const cuDate = currentDate()
+
 const CheckoutSchema = new mongoose.Schema({
     country : {
         type: String,
@@ -38,6 +49,22 @@ const CheckoutSchema = new mongoose.Schema({
     },
     orderNote: {
         type: String,
+    },
+    orderProducts : {
+        type: Object,
+        required : true
+    },
+    payment: {
+        type: String,
+        required: true
+    },
+    totalAmount:{
+        type: Number,
+        required: true
+    }, 
+    date: {
+        type : Date,
+        default : cuDate
     }
 });
 
