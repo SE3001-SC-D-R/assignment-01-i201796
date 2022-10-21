@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 
 export default function Checkout() {
-  const [listOfCart, setListOfCart] = useState([])
-  useEffect(() => {
-    Axios.get("http://localhost:3001/getCartItems").then((response ) =>{
-      setListOfCart(response.data)
-    })
-  }, [])
+  const [listOfCart, setListOfCart] = useState([]);
+  let total = 0
 
-  
-  
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getCartItems").then((response) => {
+      setListOfCart(response.data);
+    });
+  }, []);
+
   const [country, setCountry] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -25,8 +25,21 @@ export default function Checkout() {
   const [orderNote, setOrderNote] = useState("");
   
 
+  const calTotal = () =>{
+    let temp =0 
+    for (let index = 0; index <  listOfCart.length; index++) {
+      temp += listOfCart[index].price;
+    }
+    console.log(temp)
+    return temp
+  }
+
+  total = calTotal()
+
+  
+
   const createBillInfo = () => {
-    Axios.post("http://localhost:3001/addBillingInfo", {
+     Axios.post("http://localhost:3001/addBillingInfo", {
       country,
       firstname,
       lastname,
@@ -40,7 +53,9 @@ export default function Checkout() {
     }).then((response) => {
       alert("Bill Info Added");
     });
-  };
+  
+};
+
   return (
     <React.Fragment>
       <nav
@@ -125,258 +140,259 @@ export default function Checkout() {
           </div>
         </div>
       </div>
-
-      <div class="untree_co-section">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md-12"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-5 mb-md-0">
-              <h2 class="h3 mb-3 text-black">Billing Details</h2>
-              <div class="p-3 p-lg-5 border bg-white">
-                <div class="form-group">
-                  <label for="c_country" class="text-black">
-                    Country <span class="text-danger">*</span>
-                  </label>
-                  <select
-                    id="c_country"
-                    class="form-control"
-                    onChange={(event) => {
-                      setCountry(event.target.value);
-                    }}
-                  >
-                    <option value="1">Select a country</option>
-                    <option value="2">Pakistan</option>
-                    <option value="3">Algeria</option>
-                    <option value="4">Afghanistan</option>
-                    <option value="5">Ghana</option>
-                    <option value="6">Albania</option>
-                    <option value="7">Bahrain</option>
-                    <option value="8">Colombia</option>
-                    <option value="9">Dominican Republic</option>
-                  </select>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="c_fname" class="text-black">
-                      First Name <span class="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_fname"
-                      name="c_fname"
-                      onChange={(event) => {
-                        setFirstname(event.target.value);
-                      }}
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="c_lname" class="text-black">
-                      Last Name <span class="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_lname"
-                      name="c_lname"
-                      onChange={(event) => {
-                        setLastname(event.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_companyname" class="text-black">
-                      Company Name{" "}
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_companyname"
-                      name="c_companyname"
-                      onChange={(event) => {
-                        setCompanyname(event.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_address" class="text-black">
-                      Address <span class="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_address"
-                      name="c_address"
-                      placeholder="Street address"
-                      onChange={(event) => {
-                        setAddress(event.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group mt-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Apartment, suite, unit etc. (optional)"
-                  />
-                </div>
-
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="c_state_country" class="text-black">
-                      State / Country <span class="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_state_country"
-                      name="c_state_country"
-                      onChange={(event) => {
-                        setState(event.target.value);
-                      }}
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="c_postal_zip" class="text-black">
-                      Posta / Zip <span class="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_postal_zip"
-                      name="c_postal_zip"
-                      onChange={(event) => {
-                        setZip(event.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group row mb-5">
-                  <div class="col-md-6">
-                    <label for="c_email_address" class="text-black">
-                      Email Address <span class="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_email_address"
-                      name="c_email_address"
-                      onChange={(event) => {
-                        setEmail(event.target.value);
-                      }}
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="c_phone" class="text-black">
-                      Phone <span class="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="c_phone"
-                      name="c_phone"
-                      placeholder="Phone Number"
-                      onChange={(event) => {
-                        setPhone(event.target.value);
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="c_order_notes" class="text-black">
-                    Order Notes
-                  </label>
-                  <textarea
-                    name="c_order_notes"
-                    id="c_order_notes"
-                    cols="30"
-                    rows="5"
-                    class="form-control"
-                    placeholder="Write your notes here..."
-                    onChange={(event) => {
-                      setOrderNote(event.target.value);
-                    }}
-                  ></textarea>
-                </div>
-              </div>
+        <div class="untree_co-section">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-md-12"></div>
             </div>
-            <div class="col-md-6">
-              <div class="row mb-5">
-                <div class="col-md-12">
-                <h2 class="h3 mb-3 text-black">Your Order</h2>
-                  <div class="p-3 p-lg-5 border bg-white">
-                    <table class="table site-block-order-table mb-5">
-                      <thead>
-                        <th>Product</th>
-                        <th>Total</th>
-                      </thead>
-                      <tbody>
-                      {listOfCart.map((cart)=>{
-                    return(
-                        <tr>
-                          <td>
-                            {cart.product} <strong class="mx-2">x</strong>  {cart.quantity}
-                          </td>
-                          <td>${cart.price}</td>
-                        </tr>
-                        );
-                      })}
-                     
-                        <tr>
-                          <td class="text-black font-weight-bold">
-                            <strong>Cart Subtotal</strong>
-                          </td>
-                          <td class="text-black"></td>
-                        </tr>
-                        <tr>
-                          <td class="text-black font-weight-bold">
-                            <strong>Order Total</strong>
-                          </td>
-                          <td class="text-black font-weight-bold">
-                            <strong>$350.00</strong>
-                          </td>
-                        </tr>
-                      </tbody>    
-                    </table>
-
-                    <div class="border p-3 mb-3">
-                      <h3 class="h6 mb-0">
-                        <a
-                          class="d-block"
-                          href="#collapsebank"
-                          role="button"
-                          aria-controls="collapsebank"
-                        >
-                          Cash On Delivery
-                        </a>
-                      </h3>
+            <div class="row">
+              <div class="col-md-6 mb-5 mb-md-0">
+                <h2 class="h3 mb-3 text-black">Billing Details</h2>
+                <div class="p-3 p-lg-5 border bg-white">
+                  <div class="form-group">
+                    <label for="c_country" class="text-black">
+                      Country <span class="text-danger">*</span>
+                    </label>
+                    <select
+                      id="c_country"
+                      class="form-control"
+                      onChange={(event) => {
+                        setCountry(event.target.value);
+                      }}
+                    >
+                      <option value="1">Select a country</option>
+                      <option value="Pakistan">Pakistan</option>
+                      <option value="Algeria">Algeria</option>
+                      <option value="Afghanistan">Afghanistan</option>
+                      <option value="Ghana">Ghana</option>
+                      <option value="Albania">Albania</option>
+                      <option value="Bahrain">Bahrain</option>
+                      <option value="Colombia">Colombia</option>
+                      <option value="Dominican Republic">Dominican Republic</option>
+                    </select>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label for="c_fname" class="text-black">
+                        First Name <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_fname"
+                        name="c_fname"
+                        onChange={(event) => {
+                          setFirstname(event.target.value);
+                        }}
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="c_lname" class="text-black">
+                        Last Name <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_lname"
+                        name="c_lname"
+                        onChange={(event) => {
+                          setLastname(event.target.value);
+                        }}
+                      />
                     </div>
                   </div>
 
-                  <div class="row mb-5">
-                    <div class="col-md-12"></div>
-                    <div class="form-group">
-                      <Link to="/thankyou">
-                        <br></br>
-                        <button
-                          class="btn btn-black btn-lg py-3 btn-block"
-                          onClick={createBillInfo}
-                        >
+                  <div class="form-group row">
+                    <div class="col-md-12">
+                      <label for="c_companyname" class="text-black">
+                        Company Name{" "}
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_companyname"
+                        name="c_companyname"
+                        onChange={(event) => {
+                          setCompanyname(event.target.value);
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-12">
+                      <label for="c_address" class="text-black">
+                        Address <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_address"
+                        name="c_address"
+                        placeholder="Street address"
+                        onChange={(event) => {
+                          setAddress(event.target.value);
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Apartment, suite, unit etc. (optional)"
+                    />
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label for="c_state_country" class="text-black">
+                        State / Country <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_state_country"
+                        name="c_state_country"
+                        onChange={(event) => {
+                          setState(event.target.value);
+                        }}
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="c_postal_zip" class="text-black">
+                        Posta / Zip <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_postal_zip"
+                        name="c_postal_zip"
+                        onChange={(event) => {
+                          setZip(event.target.value);
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-5">
+                    <div class="col-md-6">
+                      <label for="c_email_address" class="text-black">
+                        Email Address <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_email_address"
+                        name="c_email_address"
+                        onChange={(event) => {
+                          setEmail(event.target.value);
+                        }}
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="c_phone" class="text-black">
+                        Phone <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="c_phone"
+                        name="c_phone"
+                        placeholder="Phone Number"
+                        onChange={(event) => {
+                          setPhone(event.target.value);
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="c_order_notes" class="text-black">
+                      Order Notes
+                    </label>
+                    <textarea
+                      name="c_order_notes"
+                      id="c_order_notes"
+                      cols="30"
+                      rows="5"
+                      class="form-control"
+                      placeholder="Write your notes here..."
+                      onChange={(event) => {
+                        setOrderNote(event.target.value);
+                      }}
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-5">
+                  <div class="col-md-12">
+                    <h2 class="h3 mb-3 text-black">Your Order</h2>
+                    <div class="p-3 p-lg-5 border bg-white">
+                      <table class="table site-block-order-table mb-5">
+                        <thead>
+                          <th>Product</th>
+                          <th>Total</th>
+                        </thead>
+                        <tbody>
+                          {listOfCart.map((cart) => {
+                            return (
+                              <tr>
+                                <td>
+                                  {cart.product} <strong class="mx-2">x</strong>{" "}
+                                  {cart.quantity}
+                                </td>
+                                <td>${cart.price}</td>
+                              </tr>
+                            );
+                          })}
+
+                          <tr>
+                            <td class="text-black font-weight-bold">
+                              <strong>Cart Subtotal</strong>
+                            </td>
+                            <td class="text-black">${total}</td>
+                          </tr>
+                          <tr>
+                            <td class="text-black font-weight-bold">
+                              <strong>Order Total</strong>
+                            </td>
+                            <td class="text-black font-weight-bold">
+                              <strong>${total}</strong>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <div class="form-group">
+                    <label for="c_country" class="text-black">
+                      Payment Option <span class="text-danger">*</span>
+                    </label>
+                    <select 
+                      id="Payment"
+                      class="form-control"
+                    >
+                      <option value="1">Select a Payment Option</option>
+                      <option value="Cash On Delivery">Cash On Delivery</option>
+                      </select>
+                  </div>
+                    </div>
+
+                    <div class="row mb-5">
+                      <div class="col-md-12"></div>
+                      <div class="form-group">
+                      <br></br>
+                        <Link to="/thankyou">
+                          <button 
+                            class="btn btn-black btn-lg py-3 btn-block"
+                            onClick={createBillInfo}
+                          >
                           Place Order
-                        </button>
-                      </Link>
+                          </button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -384,7 +400,7 @@ export default function Checkout() {
             </div>
           </div>
         </div>
-      </div>
+      
       <footer class="footer-section">
         <div class="container relative">
           <div class="sofa-img">
