@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 
@@ -33,7 +33,7 @@ export default function Checkout() {
     for (let index = 0; index < listOfCart.length; index++) {
       temp += listOfCart[index].price;
     }
-    console.log(temp);
+    
     return temp;
   };
 
@@ -151,7 +151,7 @@ export default function Checkout() {
           </div>
           <div class="row">
             <div class="col-md-6 mb-5 mb-md-0">
-              <h2 class="h3 mb-3 text-black">Billing Details</h2>
+              <h2 data-testid = "Bill" class="h3 mb-3 text-black">Billing Details</h2>
               <div class="p-3 p-lg-5 border bg-white">
                 <div class="form-group">
                   <label for="c_country" class="text-black">
@@ -400,7 +400,8 @@ export default function Checkout() {
                     <div class="col-md-12"></div>
                     <div class="form-group">
                       <br></br>
-                      <Link to="/thankyou">
+                      <div data-testid = "Button">
+                      <Link data-testid = "Thank-you-Page-Link" to="/thankyou">
                         <button
                           class="btn btn-black btn-lg py-3 btn-block"
                           onClick={() => {
@@ -411,6 +412,7 @@ export default function Checkout() {
                           Place Order
                         </button>
                       </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
