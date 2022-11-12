@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import '@testing-library/jest-dom';
 
-test('renders learn react link', () => {
+test('Div Rendering?', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByTestId("AppDiv");
   expect(linkElement).toBeInTheDocument();
 });

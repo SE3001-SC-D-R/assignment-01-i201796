@@ -62,11 +62,11 @@ export default function Checkout() {
   };
   return (
     <React.Fragment>
-      <nav
+      <nav data-testid = "Nav"
         class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
         arial-label="Furni navigation bar"
       >
-        <div class="container">
+        <div data-testid = "AmoireLable" class="container">
           <a class="navbar-brand" href="index.html">
             Amoire<span>.</span>
           </a>
