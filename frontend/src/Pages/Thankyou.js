@@ -3,7 +3,7 @@ import React from "react";
 export default function Thankyou() {
   return (
     <React.Fragment>
-      <nav
+      <nav data-testid = "nv-id2"
         class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
         arial-label="Furni navigation bar"
       >
@@ -78,7 +78,7 @@ export default function Thankyou() {
           <div class="row justify-content-between">
             <div class="col-lg-5">
               <div class="intro-excerpt">
-                <h1>Order Confirmed!</h1>
+                <h1 data-testid = "th-h1">Order Confirmed!</h1>
               </div>
             </div>
             <div class="col-lg-7"></div>
@@ -110,7 +110,7 @@ export default function Thankyou() {
                 </svg>
               </span>
               <h2 class="display-3 text-black">Thank you!</h2>
-              <p class="lead mb-5">You order was successfuly completed.</p>
+              <p data-testid = "conformation" class="lead mb-5">You order was successfuly completed.</p>
               <p>
                 <a href="shop.html" class="btn btn-sm btn-outline-black">
                   Back to shop
@@ -141,7 +141,7 @@ export default function Thankyou() {
                   <span>Subscribe to Newsletter</span>
                 </h3>
 
-                <form action="#" class="row g-3">
+                <form data-testid="form" action="#" class="row g-3">
                   <div class="col-auto">
                     <input
                       type="text"

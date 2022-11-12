@@ -137,7 +137,7 @@ export default function Checkout() {
           <div class="row justify-content-between">
             <div class="col-lg-5">
               <div class="intro-excerpt">
-                <h1>Checkout</h1>
+                <h1 data-testid = "Checkout-h1">Checkout</h1>
               </div>
             </div>
             <div class="col-lg-7"></div>
@@ -402,7 +402,7 @@ export default function Checkout() {
                       <br></br>
                       <div data-testid = "Button">
                       <Link data-testid = "Thank-you-Page-Link" to="/thankyou">
-                        <button
+                        <button data-testid = "PO-bt"
                           class="btn btn-black btn-lg py-3 btn-block"
                           onClick={() => {
                             createBillInfo();
@@ -425,7 +425,7 @@ export default function Checkout() {
       <footer class="footer-section">
         <div class="container relative">
           <div class="sofa-img">
-            <img src="assests/images/sofa.png" alt="Image" class="img-fluid" />
+            <img data-testid = "img1" src="assests/images/sofa.png" alt="Image" class="img-fluid" />
           </div>
 
           <div class="row g-5 mb-5">
