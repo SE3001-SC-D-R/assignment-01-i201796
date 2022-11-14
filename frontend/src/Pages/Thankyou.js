@@ -4,16 +4,16 @@ export default function Thankyou() {
   return (
     <React.Fragment>
       <nav data-testid = "nv-id2"
-        class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+        className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
         arial-label="Furni navigation bar"
       >
-        <div class="container">
-          <a class="navbar-brand" href="index.html">
+        <div className="container">
+          <a className="navbar-brand" href="index.html">
             Amoire<span>.</span>
           </a>
 
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarsFurni"
@@ -21,51 +21,51 @@ export default function Thankyou() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarsFurni">
-            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-              <li class="nav-item ">
-                <a class="nav-link" href="index.html">
+          <div className="collapse navbar-collapse" id="navbarsFurni">
+            <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+              <li className="nav-item ">
+                <a className="nav-link" href="index.html">
                   Home
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="shop.html">
+                <a className="nav-link" href="shop.html">
                   Shop
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="about.html">
+                <a className="nav-link" href="about.html">
                   About us
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="services.html">
+                <a className="nav-link" href="services.html">
                   Services
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="blog.html">
+                <a className="nav-link" href="blog.html">
                   Blog
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="contact.html">
+                <a className="nav-link" href="contact.html">
                   Contact us
                 </a>
               </li>
             </ul>
 
-            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <img src="assests/images/user.svg" />
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="cart.html">
+                <a className="nav-link" href="cart.html">
                   <img src="assests/images/cart.svg" />
                 </a>
               </li>
@@ -73,29 +73,29 @@ export default function Thankyou() {
           </div>
         </div>
       </nav>
-      <div class="hero">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-5">
-              <div class="intro-excerpt">
+      <div className="hero">
+        <div className="container">
+          <div className="row justify-content-between">
+            <div className="col-lg-5">
+              <div className="intro-excerpt">
                 <h1 data-testid = "th-h1">Order Confirmed!</h1>
               </div>
             </div>
-            <div class="col-lg-7"></div>
+            <div className="col-lg-7"></div>
           </div>
         </div>
       </div>
 
-      <div class="untree_co-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center pt-5">
-              <span class="display-3 thankyou-icon text-primary">
+      <div className="untree_co-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center pt-5">
+              <span className="display-3 thankyou-icon text-primary">
                 <svg
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
-                  class="bi bi-cart-check mb-5"
+                  className="bi bi-cart-check mb-5"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -109,10 +109,10 @@ export default function Thankyou() {
                   />
                 </svg>
               </span>
-              <h2 class="display-3 text-black">Thank you!</h2>
-              <p data-testid = "conformation" class="lead mb-5">You order was successfuly completed.</p>
+              <h2 className="display-3 text-black">Thank you!</h2>
+              <p data-testid = "conformation" className="lead mb-5">You order was successfuly completed.</p>
               <p>
-                <a href="shop.html" class="btn btn-sm btn-outline-black">
+                <a href="shop.html" className="btn btn-sm btn-outline-black">
                   Back to shop
                 </a>
               </p>
@@ -121,44 +121,44 @@ export default function Thankyou() {
         </div>
       </div>
 
-      <footer class="footer-section">
-        <div class="container relative">
-          <div class="sofa-img">
-            <img src="assests/images/sofa.png" alt="Image" class="img-fluid" />
+      <footer className="footer-section">
+        <div className="container relative">
+          <div className="sofa-img">
+            <img src="assests/images/sofa.png" alt="Image" className="img-fluid" />
           </div>
 
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="subscription-form">
-                <h3 class="d-flex align-items-center">
-                  <span class="me-1">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="subscription-form">
+                <h3 className="d-flex align-items-center">
+                  <span className="me-1">
                     <img
                       src="assests/images/envelope-outline.svg"
                       alt="Image"
-                      class="img-fluid"
+                      className="img-fluid"
                     />
                   </span>
                   <span>Subscribe to Newsletter</span>
                 </h3>
 
-                <form data-testid="form" action="#" class="row g-3">
-                  <div class="col-auto">
+                <form data-testid="form" action="#" className="row g-3">
+                  <div className="col-auto">
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Enter your name"
                     />
                   </div>
-                  <div class="col-auto">
+                  <div className="col-auto">
                     <input
                       type="email"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Enter your email"
                     />
                   </div>
-                  <div class="col-auto">
-                    <button class="btn btn-primary">
-                      <span class="fa fa-paper-plane"></span>
+                  <div className="col-auto">
+                    <button className="btn btn-primary">
+                      <span className="fa fa-paper-plane"></span>
                     </button>
                   </div>
                 </form>
@@ -166,48 +166,48 @@ export default function Thankyou() {
             </div>
           </div>
 
-          <div class="row g-5 mb-5">
-            <div class="col-lg-4">
-              <div class="mb-4 footer-logo-wrap">
-                <a href="#" class="footer-logo">
+          <div className="row g-5 mb-5">
+            <div className="col-lg-4">
+              <div className="mb-4 footer-logo-wrap">
+                <a href="#" className="footer-logo">
                   Amoire<span>.</span>
                 </a>
               </div>
-              <p class="mb-4">
+              <p className="mb-4">
               A Company that wants to provide the best 
                 for its customer. We belive in that it is  
                 the customer how are the essance of a bussiness 
                 and the key to success. 
               </p>
 
-              <ul class="list-unstyled custom-social">
+              <ul className="list-unstyled custom-social">
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-facebook-f"></span>
+                    <span className="fa fa-brands fa-facebook-f"></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-twitter"></span>
+                    <span className="fa fa-brands fa-twitter"></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-instagram"></span>
+                    <span className="fa fa-brands fa-instagram"></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-linkedin"></span>
+                    <span className="fa fa-brands fa-linkedin"></span>
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div class="col-lg-8">
-              <div class="row links-wrap">
-                <div class="col-6 col-sm-6 col-md-3">
-                  <ul class="list-unstyled">
+            <div className="col-lg-8">
+              <div className="row links-wrap">
+                <div className="col-6 col-sm-6 col-md-3">
+                  <ul className="list-unstyled">
                     <li>
                       <a href="#">About us</a>
                     </li>
@@ -223,8 +223,8 @@ export default function Thankyou() {
                   </ul>
                 </div>
 
-                <div class="col-6 col-sm-6 col-md-3">
-                  <ul class="list-unstyled">
+                <div className="col-6 col-sm-6 col-md-3">
+                  <ul className="list-unstyled">
                     <li>
                       <a href="#">Support</a>
                     </li>
@@ -237,8 +237,8 @@ export default function Thankyou() {
                   </ul>
                 </div>
 
-                <div class="col-6 col-sm-6 col-md-3">
-                  <ul class="list-unstyled">
+                <div className="col-6 col-sm-6 col-md-3">
+                  <ul className="list-unstyled">
                     <li>
                       <a href="#">Jobs</a>
                     </li>
@@ -254,8 +254,8 @@ export default function Thankyou() {
                   </ul>
                 </div>
 
-                <div class="col-6 col-sm-6 col-md-3">
-                  <ul class="list-unstyled">
+                <div className="col-6 col-sm-6 col-md-3">
+                  <ul className="list-unstyled">
                     <li>
                       <a href="#">Nordic Chair</a>
                     </li>
@@ -271,19 +271,19 @@ export default function Thankyou() {
             </div>
           </div>
 
-          <div class="border-top copyright">
-            <div class="row pt-4">
-              <div class="col-lg-6">
-                <p class="mb-2 text-center text-lg-start">
+          <div className="border-top copyright">
+            <div className="row pt-4">
+              <div className="col-lg-6">
+                <p className="mb-2 text-center text-lg-start">
                   Copyright &copy;
                   <script>document.write(new Date().getFullYear());</script>.
                   All Rights Reserved. &mdash; Designed with love by Amoire.
                 </p>
               </div>
 
-              <div class="col-lg-6 text-center text-lg-end">
-                <ul class="list-unstyled d-inline-flex ms-auto">
-                  <li class="me-4">
+              <div className="col-lg-6 text-center text-lg-end">
+                <ul className="list-unstyled d-inline-flex ms-auto">
+                  <li className="me-4">
                     <a href="#">Terms &amp; Conditions</a>
                   </li>
                   <li>

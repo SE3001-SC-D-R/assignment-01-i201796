@@ -63,16 +63,16 @@ export default function Checkout() {
   return (
     <React.Fragment>
       <nav data-testid = "Nav"
-        class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+        className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
         arial-label="Furni navigation bar"
       >
-        <div data-testid = "AmoireLable" class="container">
-          <a class="navbar-brand" href="index.html">
+        <div data-testid = "AmoireLable" className="container">
+          <a className="navbar-brand" href="index.html">
             Amoire<span>.</span>
           </a>
 
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarsFurni"
@@ -80,51 +80,51 @@ export default function Checkout() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarsFurni">
-            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-              <li class="nav-item ">
-                <a class="nav-link" href="index.html">
+          <div className="collapse navbar-collapse" id="navbarsFurni">
+            <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+              <li className="nav-item ">
+                <a className="nav-link" href="index.html">
                   Home
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="shop.html">
+                <a className="nav-link" href="shop.html">
                   Shop
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="about.html">
+                <a className="nav-link" href="about.html">
                   About us
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="services.html">
+                <a className="nav-link" href="services.html">
                   Services
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="blog.html">
+                <a className="nav-link" href="blog.html">
                   Blog
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="contact.html">
+                <a className="nav-link" href="contact.html">
                   Contact us
                 </a>
               </li>
             </ul>
 
-            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li>
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <img src="assests/images/user.svg" />
                 </a>
               </li>
               <li>
-                <a class="nav-link" href="cart.html">
+                <a className="nav-link" href="cart.html">
                   <img src="assests/images/cart.svg" />
                 </a>
               </li>
@@ -132,34 +132,34 @@ export default function Checkout() {
           </div>
         </div>
       </nav>
-      <div class="hero">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-5">
-              <div class="intro-excerpt">
+      <div className="hero">
+        <div className="container">
+          <div className="row justify-content-between">
+            <div className="col-lg-5">
+              <div className="intro-excerpt">
                 <h1 data-testid = "Checkout-h1">Checkout</h1>
               </div>
             </div>
-            <div class="col-lg-7"></div>
+            <div className="col-lg-7"></div>
           </div>
         </div>
       </div>
-      <div class="untree_co-section">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md-12"></div>
+      <div className="untree_co-section">
+        <div className="container">
+          <div className="row mb-5">
+            <div className="col-md-12"></div>
           </div>
-          <div class="row">
-            <div class="col-md-6 mb-5 mb-md-0">
-              <h2 data-testid = "Bill" class="h3 mb-3 text-black">Billing Details</h2>
-              <div class="p-3 p-lg-5 border bg-white">
-                <div class="form-group">
-                  <label for="c_country" class="text-black">
-                    Country <span class="text-danger">*</span>
+          <div className="row">
+            <div className="col-md-6 mb-5 mb-md-0">
+              <h2 data-testid = "Bill" className="h3 mb-3 text-black">Billing Details</h2>
+              <div className="p-3 p-lg-5 border bg-white">
+                <div className="form-group">
+                  <label for="c_country" className="text-black">
+                    Country <span className="text-danger">*</span>
                   </label>
                   <select
                     id="c_country"
-                    class="form-control"
+                    className="form-control"
                     onChange={(event) => {
                       setCountry(event.target.value);
                     }}
@@ -177,14 +177,14 @@ export default function Checkout() {
                     </option>
                   </select>
                 </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="c_fname" class="text-black">
-                      First Name <span class="text-danger">*</span>
+                <div className="form-group row">
+                  <div className="col-md-6">
+                    <label for="c_fname" className="text-black">
+                      First Name <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_fname"
                       name="c_fname"
                       onChange={(event) => {
@@ -192,13 +192,13 @@ export default function Checkout() {
                       }}
                     />
                   </div>
-                  <div class="col-md-6">
-                    <label for="c_lname" class="text-black">
-                      Last Name <span class="text-danger">*</span>
+                  <div className="col-md-6">
+                    <label for="c_lname" className="text-black">
+                      Last Name <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_lname"
                       name="c_lname"
                       onChange={(event) => {
@@ -208,14 +208,14 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_companyname" class="text-black">
+                <div className="form-group row">
+                  <div className="col-md-12">
+                    <label for="c_companyname" className="text-black">
                       Company Name{" "}
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_companyname"
                       name="c_companyname"
                       onChange={(event) => {
@@ -225,14 +225,14 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="c_address" class="text-black">
-                      Address <span class="text-danger">*</span>
+                <div className="form-group row">
+                  <div className="col-md-12">
+                    <label for="c_address" className="text-black">
+                      Address <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_address"
                       name="c_address"
                       placeholder="Street address"
@@ -243,22 +243,22 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <div class="form-group mt-3">
+                <div className="form-group mt-3">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Apartment, suite, unit etc. (optional)"
                   />
                 </div>
 
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="c_state_country" class="text-black">
-                      State / Country <span class="text-danger">*</span>
+                <div className="form-group row">
+                  <div className="col-md-6">
+                    <label for="c_state_country" className="text-black">
+                      State / Country <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_state_country"
                       name="c_state_country"
                       onChange={(event) => {
@@ -266,13 +266,13 @@ export default function Checkout() {
                       }}
                     />
                   </div>
-                  <div class="col-md-6">
-                    <label for="c_postal_zip" class="text-black">
-                      Posta / Zip <span class="text-danger">*</span>
+                  <div className="col-md-6">
+                    <label for="c_postal_zip" className="text-black">
+                      Posta / Zip <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_postal_zip"
                       name="c_postal_zip"
                       onChange={(event) => {
@@ -282,14 +282,14 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <div class="form-group row mb-5">
-                  <div class="col-md-6">
-                    <label for="c_email_address" class="text-black">
-                      Email Address <span class="text-danger">*</span>
+                <div className="form-group row mb-5">
+                  <div className="col-md-6">
+                    <label for="c_email_address" className="text-black">
+                      Email Address <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_email_address"
                       name="c_email_address"
                       onChange={(event) => {
@@ -297,13 +297,13 @@ export default function Checkout() {
                       }}
                     />
                   </div>
-                  <div class="col-md-6">
-                    <label for="c_phone" class="text-black">
-                      Phone <span class="text-danger">*</span>
+                  <div className="col-md-6">
+                    <label for="c_phone" className="text-black">
+                      Phone <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="c_phone"
                       name="c_phone"
                       placeholder="Phone Number"
@@ -314,8 +314,8 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label for="c_order_notes" class="text-black">
+                <div className="form-group">
+                  <label for="c_order_notes" className="text-black">
                     Order Notes
                   </label>
                   <textarea
@@ -323,7 +323,7 @@ export default function Checkout() {
                     id="c_order_notes"
                     cols="30"
                     rows="5"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Write your notes here..."
                     onChange={(event) => {
                       setOrderNote(event.target.value);
@@ -332,12 +332,12 @@ export default function Checkout() {
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="row mb-5">
-                <div class="col-md-12">
-                  <h2 class="h3 mb-3 text-black">Your Order</h2>
-                  <div class="p-3 p-lg-5 border bg-white">
-                    <table class="table site-block-order-table mb-5">
+            <div className="col-md-6">
+              <div className="row mb-5">
+                <div className="col-md-12">
+                  <h2 className="h3 mb-3 text-black">Your Order</h2>
+                  <div className="p-3 p-lg-5 border bg-white">
+                    <table className="table site-block-order-table mb-5">
                       <thead>
                         <th>Product</th>
                         <th>Total</th>
@@ -347,7 +347,7 @@ export default function Checkout() {
                           return (
                             <tr>
                               <td>
-                                {cart.product} <strong class="mx-2">x</strong>{" "}
+                                {cart.product} <strong className="mx-2">x</strong>{" "}
                                 {cart.quantity}
                               </td>
                               <td>${cart.price}</td>
@@ -356,36 +356,36 @@ export default function Checkout() {
                         })}
 
                         <tr>
-                          <td class="text-black font-weight-bold">
+                          <td className="text-black font-weight-bold">
                             <strong>Cart Subtotal</strong>
                           </td>
                           <td
                             onChange={(event) => {
                               setTotalAmount(event.target.value);
                             }}
-                            class="text-black"
+                            className="text-black"
                           >
                             ${total}
                           </td>
                         </tr>
                         <tr>
-                          <td class="text-black font-weight-bold">
+                          <td className="text-black font-weight-bold">
                             <strong>Order Total</strong>
                           </td>
-                          <td class="text-black font-weight-bold">
+                          <td className="text-black font-weight-bold">
                             <strong>${total}</strong>
                           </td>
                         </tr>
                       </tbody>
                     </table>
 
-                    <div class="form-group">
-                      <label for="c_country" class="text-black">
-                        Payment Option <span class="text-danger">*</span>
+                    <div className="form-group">
+                      <label for="c_country" className="text-black">
+                        Payment Option <span className="text-danger">*</span>
                       </label>
                       <select
                         id="Payment"
-                        class="form-control"
+                        className="form-control"
                         onChange={(event) => setPayment(event.target.value)}
                       >
                         <option value="1">Select a Payment Option</option>
@@ -396,14 +396,14 @@ export default function Checkout() {
                     </div>
                   </div>
 
-                  <div class="row mb-5">
-                    <div class="col-md-12"></div>
-                    <div class="form-group">
+                  <div className="row mb-5">
+                    <div className="col-md-12"></div>
+                    <div className="form-group">
                       <br></br>
                       <div data-testid = "Button">
                       <Link data-testid = "Thank-you-Page-Link" to="/thankyou">
                         <button data-testid = "PO-bt"
-                          class="btn btn-black btn-lg py-3 btn-block"
+                          className="btn btn-black btn-lg py-3 btn-block"
                           onClick={() => {
                             createBillInfo();
 
@@ -422,53 +422,53 @@ export default function Checkout() {
         </div>
       </div>
 
-      <footer class="footer-section">
-        <div class="container relative">
-          <div class="sofa-img">
-            <img data-testid = "img1" src="assests/images/sofa.png" alt="Image" class="img-fluid" />
+      <footer className="footer-section">
+        <div className="container relative">
+          <div className="sofa-img">
+            <img data-testid = "img1" src="assests/images/sofa.png" alt="Image" className="img-fluid" />
           </div>
 
-          <div class="row g-5 mb-5">
-            <div class="col-lg-4">
-              <div class="mb-4 footer-logo-wrap">
-                <a href="#" class="footer-logo">
+          <div className="row g-5 mb-5">
+            <div className="col-lg-4">
+              <div className="mb-4 footer-logo-wrap">
+                <a href="#" className="footer-logo">
                   Amoire<span>.</span>
                 </a>
               </div>
-              <p class="mb-4">
+              <p className="mb-4">
                 A Company that wants to provide the best for its customer. We
                 belive in that it is the customer how are the essance of a
                 bussiness and the key to success.
               </p>
 
-              <ul class="list-unstyled custom-social">
+              <ul className="list-unstyled custom-social">
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-facebook-f"></span>
+                    <span className="fa fa-brands fa-facebook-f"></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-twitter"></span>
+                    <span className="fa fa-brands fa-twitter"></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-instagram"></span>
+                    <span className="fa fa-brands fa-instagram"></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <span class="fa fa-brands fa-linkedin"></span>
+                    <span className="fa fa-brands fa-linkedin"></span>
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div class="col-lg-8">
-              <div class="row links-wrap">
-                <div class="col-6 col-sm-6 col-md-3">
-                  <ul class="list-unstyled">
+            <div className="col-lg-8">
+              <div className="row links-wrap">
+                <div className="col-6 col-sm-6 col-md-3">
+                  <ul className="list-unstyled">
                     <li>
                       <a href="#">About us</a>
                     </li>
@@ -484,8 +484,8 @@ export default function Checkout() {
                   </ul>
                 </div>
 
-                <div class="col-6 col-sm-6 col-md-3">
-                  <ul class="list-unstyled">
+                <div className="col-6 col-sm-6 col-md-3">
+                  <ul className="list-unstyled">
                     <li>
                       <a href="#">Support</a>
                     </li>
@@ -498,8 +498,8 @@ export default function Checkout() {
                   </ul>
                 </div>
 
-                <div class="col-6 col-sm-6 col-md-3">
-                  <ul class="list-unstyled">
+                <div className="col-6 col-sm-6 col-md-3">
+                  <ul className="list-unstyled">
                     <li>
                       <a href="#">Jobs</a>
                     </li>
@@ -518,19 +518,19 @@ export default function Checkout() {
             </div>
           </div>
 
-          <div class="border-top copyright">
-            <div class="row pt-4">
-              <div class="col-lg-6">
-                <p class="mb-2 text-center text-lg-start">
+          <div className="border-top copyright">
+            <div className="row pt-4">
+              <div className="col-lg-6">
+                <p className="mb-2 text-center text-lg-start">
                   Copyright &copy;
                   <script>document.write(new Date().getFullYear());</script>.All
                   Rights Reserved.&mdash; Designed with love by Amoire.
                 </p>
               </div>
 
-              <div class="col-lg-6 text-center text-lg-end">
-                <ul class="list-unstyled d-inline-flex ms-auto">
-                  <li class="me-4">
+              <div className="col-lg-6 text-center text-lg-end">
+                <ul className="list-unstyled d-inline-flex ms-auto">
+                  <li className="me-4">
                     <a href="#">Terms &amp; Conditions</a>
                   </li>
                   <li>
