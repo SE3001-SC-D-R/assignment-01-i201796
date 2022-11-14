@@ -1,12 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import {BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom'
 import Checkout from './Pages/Checkout';
-import RouterPages from './Pages/RouterPages';
+import Thankyou from './Pages/Thankyou'
 
 function App() {
   return (
-    <div className="App">
-      < RouterPages />
+    <div data-testid = "AppDiv" className="App">
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element = {<Checkout />}/>
+        <Route path="/thankyou" element = {<Thankyou />}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
