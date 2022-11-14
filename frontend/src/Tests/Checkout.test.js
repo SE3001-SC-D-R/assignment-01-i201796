@@ -42,23 +42,4 @@ test('Text of the lable is amoire?', () => {
     expect(linkElement).toHaveTextContent("Checkout");
   });
 
-//   const renderWithRouter = (component) => {
-//     const history = createMemoryHistory()
-//     return { 
-//     ...render (
-//     <Router history={history}>
-//         {component}
-//     </Router>
-//     )
-//   }
-//   }
-// test('Should render thankyou page', () => {
-
-//   const { container, getByTestId } = renderWithRouter(<Checkout/>) 
-//   const intialLink = getByTestId("Button")
-//   const postLink = getByTestId("Thank-you-Page-Link")
-
-//   expect(container.innerHTML).toMatch('Checkout')
-//   expect(intialLink).toContainElement(postLink)
-// })
 
