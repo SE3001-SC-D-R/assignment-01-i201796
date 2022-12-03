@@ -68,7 +68,7 @@ export default function Checkout() {
       >
         <div data-testid = "AmoireLable" className="container">
           <a className="navbar-brand" href="index.html">
-            Amoire<span>.</span>
+            Daraz<span>.</span>
           </a>
 
           <button
