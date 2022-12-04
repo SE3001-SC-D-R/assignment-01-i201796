@@ -11,10 +11,10 @@ test('Nav Exist?', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('Text of the lable is amoire?', () => {
+test('Text of the lable is Armoire?', () => {
     render(<BrowserRouter><Checkout /></BrowserRouter>);
-    const linkElement = screen.getByTestId("AmoireLable");
-    expect(linkElement).toHaveTextContent("Amoire");
+    const linkElement = screen.getByTestId("ArmoireLable");
+    expect(linkElement).toHaveTextContent("Armoire");
   });
 
   test('Is Billing Form Loading?', () => {
