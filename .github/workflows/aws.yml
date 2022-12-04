@@ -26,7 +26,8 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
     - name: Go to armoire folder
-      run: cd armoire
+      run: |
+        cd armoire
 
     - name: Run Docker-Compose
       run: |
