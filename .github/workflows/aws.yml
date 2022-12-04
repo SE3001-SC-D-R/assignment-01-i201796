@@ -25,7 +25,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
-    - name: Go into armoire folder
+    - name: Go to armoire folder
       run: cd armoire
 
     - name: Run Docker-Compose
