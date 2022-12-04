@@ -1,8 +1,8 @@
 name: CI/CD counter app
 
 on:
-  push:
-    branches: [ master ]
+   push:
+    branches: [ "main" ]
 
 jobs:
   build:
