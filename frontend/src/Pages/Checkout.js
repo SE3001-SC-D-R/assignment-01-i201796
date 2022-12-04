@@ -66,9 +66,9 @@ export default function Checkout() {
         className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
         arial-label="Furni navigation bar"
       >
-        <div data-testid = "AmoireLable" className="container">
+        <div data-testid = "ArmoireLable" className="container">
           <a className="navbar-brand" href="index.html">
-            Daraz<span>.</span>
+            Armoire<span>.</span>
           </a>
 
           <button
@@ -432,7 +432,7 @@ export default function Checkout() {
             <div className="col-lg-4">
               <div className="mb-4 footer-logo-wrap">
                 <a href="#" className="footer-logo">
-                  Amoire<span>.</span>
+                  Armoire<span>.</span>
                 </a>
               </div>
               <p className="mb-4">
@@ -524,7 +524,7 @@ export default function Checkout() {
                 <p className="mb-2 text-center text-lg-start">
                   Copyright &copy;
                   <script>document.write(new Date().getFullYear());</script>.All
-                  Rights Reserved.&mdash; Designed with love by Amoire.
+                  Rights Reserved.&mdash; Designed with love by Armoire.
                 </p>
               </div>
 
