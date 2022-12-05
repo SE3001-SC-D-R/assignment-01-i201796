@@ -8,7 +8,7 @@ export default function Checkout() {
   let total = 0;
 
   useEffect(() => {
-    Axios.get("http://3.112.16.20:3001/getCartItems").then((response) => {
+    Axios.get("http://52.198.96.246:3001/getCartItems").then((response) => {
       setListOfCart(response.data);
       setOrderProducts(response.data);
     });
@@ -42,7 +42,7 @@ export default function Checkout() {
   useEffect(() => {setTotalAmount(amount)})
 
   const createBillInfo = () => {
-    Axios.post("http://3.112.16.20:3001/addBillingInfo", {
+    Axios.post("http://52.198.96.246:3001/addBillingInfo", {
       country,
       firstname,
       lastname,
